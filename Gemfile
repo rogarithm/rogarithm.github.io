@@ -7,3 +7,4 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 # gem "rails"
 
 gem "jekyll", "= 3.0.0"
+gem "kramdown", "= 1.6.0"
