@@ -1,0 +1,13 @@
+today=$(date "+%Y-%m-%d")
+title=$1
+file="${today}-${title}.markdown"
+touch $(echo $file)
+
+cat << EOF >> $file
+---
+layout: post
+title: 
+date: $(date "+%Y-%m-%d %H:%M:%S")
+categories: 
+---
+EOF
