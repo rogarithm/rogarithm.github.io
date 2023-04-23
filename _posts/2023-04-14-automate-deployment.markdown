@@ -158,7 +158,11 @@ categories:
 - 스케일 아웃 등 프로젝트 인프라가 확장되더라도 배포 작업에 드는 시간이 늘어나지 않게 되었다.[^you-didnt-consider-scale-out]
 
 #### 구현한 코드를 확인하려면?
-- 배포 자동화를 적용한 프로젝트는 [여기](https://github.com/rogarithm/sool-dam-a)서, 깃헙액션 스크립트는 [여기](https://github.com/rogarithm/sool-dam-a/blob/main/.github/workflows/deploy-on-merge.yml)서 확인할 수 있다.
+- 배포 자동화를 적용한 프로젝트는 여기서 확인할 수 있다.
+[![프로젝트](/images/automate-deploy/sooldama-link.png)](https://github.com/rogarithm/sool-dam-a)
+
+- 깃헙액션 스크립트는 여기서 확인할 수 있다.
+[![빌드 스크립트](/images/automate-deploy/build-script-link.png)](https://github.com/rogarithm/sool-dam-a/blob/main/.github/workflows/deploy-on-merge.yml)
 
 &nbsp;
 
