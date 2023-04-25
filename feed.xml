@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>김세훈</title>
+    <description></description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 25 Apr 2023 15:25:35 +0900</pubDate>
+    <lastBuildDate>Tue, 25 Apr 2023 15:25:35 +0900</lastBuildDate>
+    <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Side Project Plan</title>
+        <description>&lt;p&gt;트랜잭션 설정&lt;/p&gt;
+</description>
+        <pubDate>Sat, 15 Apr 2023 06:18:41 +0900</pubDate>
+        <link>http://localhost:4000/2023/04/15/side-project-plan.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/04/15/side-project-plan.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>자동화, 어떻게 해야할까?</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#시작하기-전에-먼저&quot; id=&quot;markdown-toc-시작하기-전에-먼저&quot;&gt;시작하기 전에 먼저…&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#자동화로-얻을-손익을-따져보자&quot; id=&quot;markdown-toc-자동화로-얻을-손익을-따져보자&quot;&gt;자동화로 얻을 손익을 따져보자&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#어떤-순서로-작업할지-생각해보자&quot; id=&quot;markdown-toc-어떤-순서로-작업할지-생각해보자&quot;&gt;어떤 순서로 작업할지 생각해보자&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#자동화해보자&quot; id=&quot;markdown-toc-자동화해보자&quot;&gt;자동화해보자&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#수동-작업-과정을-문서화해보자&quot; id=&quot;markdown-toc-수동-작업-과정을-문서화해보자&quot;&gt;수동 작업 과정을 문서화해보자&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#자동화에-쓸-기술을-정하자&quot; id=&quot;markdown-toc-자동화에-쓸-기술을-정하자&quot;&gt;자동화에 쓸 기술을 정하자&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#자동화-발동-조건을-고려하자&quot; id=&quot;markdown-toc-자동화-발동-조건을-고려하자&quot;&gt;자동화 발동 조건을 고려하자&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#수동-작업을-자동화하자&quot; id=&quot;markdown-toc-수동-작업을-자동화하자&quot;&gt;수동 작업을 자동화하자&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#잘-동작하는지-테스트로-확인하자&quot; id=&quot;markdown-toc-잘-동작하는지-테스트로-확인하자&quot;&gt;잘 동작하는지 테스트로 확인하자&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#마치며&quot; id=&quot;markdown-toc-마치며&quot;&gt;마치며&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#자동화를-통해-얻은-것&quot; id=&quot;markdown-toc-자동화를-통해-얻은-것&quot;&gt;자동화를 통해 얻은 것&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#구현한-코드를-확인하려면&quot; id=&quot;markdown-toc-구현한-코드를-확인하려면&quot;&gt;구현한 코드를 확인하려면?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;개발자는 반복적인 작업을 자동화함으로써 더 중요한 업무에 집중할 수 있다. 토이 프로젝트이던, 회사에서 하는 업무던지 간에, 프로그램을 짜다보면 ‘이거 자동화하면 편할 것 같은데?’ 싶을 때가 종종 있다. 하지만 실제로 자동화하려고 할 때 어떻게 진도를 나갈지 막막한 적이 많았고, 그럴 때마다 ‘이럴 때 도움 될 만한 글이 있었으면 좋겠다’고 생각하곤 했다.&lt;/p&gt;
+
+&lt;p&gt;최근 수동 배포 작업을 자동화하면서 여러가지 시행착오를 겪었다. 이 과정에서 알게 된 점이 몇가지 생겼고, 이런 점을 미리 알았다면 더 수월하게 자동화할 수 있지 않았을까 생각이 들었다. 배포 작업 자동화 과정과 함께 자동화를 어떻게 해야할지 처음 고민하던 그때로 돌아갈 수 있다면 나에게 알려주고 싶은 이야기를 글로 정리해봤다.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;시작하기-전에-먼저&quot;&gt;시작하기 전에 먼저…&lt;/h3&gt;
+
+&lt;h4 id=&quot;자동화로-얻을-손익을-따져보자&quot;&gt;자동화로 얻을 손익을 따져보자&lt;/h4&gt;
+
+&lt;p&gt;다른 작업과 마찬가지로 자동화 작업 역시 시간과 노력이 들어가는 작업이다. 만약 작업에 들이는 시간에 비해 자동화했을 때 얻을 이익이 크지 않다면 차라리 자동화하지 않는 게 나을수도 있다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/images/automate-deploy/xkcd-the_general_problem_kor--.png&quot; alt=&quot;손익 따져보기&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;어쩌면 자동화하지 않는 게 나을지도 모른다&lt;sup id=&quot;fnref:xkcd&quot;&gt;&lt;a href=&quot;#fn:xkcd&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;배포 작업도 자동화에 시간이 많이 들어가는 작업이었다. 그런데도 자동화하기로 결정했던 몇 가지 이유가 있었다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;작업 빈도가 높았다. 기능을 구현하거나 버그를 고치려고 소스 코드를 변경하면 서버에 배포해서 변경 사항을 반영해야 했기 때문이다.&lt;/li&gt;
+  &lt;li&gt;작업 시간이 오래 걸렸다. 작업 중 입력해야 할 명령이 길었고, 반복적으로 명령을 입력하다가 잘못 입력할 때도 있기 때문이다.&lt;/li&gt;
+  &lt;li&gt;프로젝트에 스케일 아웃을 도입하면서 배포 과정에 드는 시간이 두 배로 늘어났고, 덩달아 관리할 민감 정보도 두 배로 늘어났다. 그래서 작업 빈도와 시간 모두 더 늘어났다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;실행 명령을 스크립트로 만들어서 작업 시간을 줄여보려고도 했지만, 오히려 스크립트 관리에 시간이 들어가서 그다지 깔끔한 해결책은 아니었다. 배포 작업을 자동화하면 이런 문제점을 더 깔끔하게 해결할 수 있을 것으로 생각되어 자동화하기로 결정했다.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h4 id=&quot;어떤-순서로-작업할지-생각해보자&quot;&gt;어떤 순서로 작업할지 생각해보자&lt;/h4&gt;
+
+&lt;p&gt;자동화하려면 뭐부터 해야할까? 처음 작업을 시작할 때, 모르는 건 많고 해야 할 건 많아보여서 뭐부터 해야할지 정하기가 어려웠다. 일단 생각나는 것부터 뭐라도 만들어보자니 무슨 기술을 쓸지도 정해지지 않았고, 뭐부터 만들어야할지 결정하기도 힘들었다. 기술 문서부터 읽어보자니 그 양과 깊이에 지쳐버렸다. 이런 고민을 해결할 힌트를 예전에 읽었던 책에서 얻었다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/images/automate-deploy/automate-book.png&quot; alt=&quot;책&quot; width=&quot;300&quot; height=&quot;400&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&amp;lt;시스템 관리자를 위한 시간관리 전략&amp;gt; &lt;sup id=&quot;fnref:time-book&quot;&gt;&lt;a href=&quot;#fn:time-book&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;&amp;lt;시스템 관리자를 위한 시간관리 전략&amp;gt; 에서 저자는 어떤 작업을 자동화할 때 밟아나갈 단계를 제안한다. 간단하게 정리하면, 먼저 수동 작업을 문서화하고, 단계별로 자동화와 테스트를 반복해 점진적으로 구현해나가라고 한다.&lt;/p&gt;
+
+&lt;p&gt;책에 나온 내용을 참고해서 해야 할 작업을 계획했다. 책에서 제시하는 작업 순서에 맞춰 작업할수도 있겠지만, 나는 꼭 그대로 따라할 필요는 없다고 생각한다. 우선 어렵지 않게 해볼 수 있는 단계를 적용하고, 나머지 단계는 나중에라도 필요해지면 적용했다. 또 필요하면 다른 작업을 추가하거나 작업 순서를 바꾸기도 했다. 작업은 이런 순서로 진행되었다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;수동으로 작업하는 각 단계를 문서화한다&lt;/li&gt;
+  &lt;li&gt;자동화에 쓸 기술을 정한다&lt;/li&gt;
+  &lt;li&gt;자동화 발동 조건을 정한다&lt;/li&gt;
+  &lt;li&gt;각 단계를 자동화한다&lt;/li&gt;
+  &lt;li&gt;자동화한 코드가 올바른지 테스트한다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;자동화해보자&quot;&gt;자동화해보자&lt;/h3&gt;
+
+&lt;p&gt;작업마다 자세히 알아보자.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h4 id=&quot;수동-작업-과정을-문서화해보자&quot;&gt;수동 작업 과정을 문서화해보자&lt;/h4&gt;
+
+&lt;p&gt;우선 수동으로 배포 작업하는 과정을 문서로 정리했다. ‘자주 해서 이미 잘 아는데 굳이 문서로 정리할 필요가 있을까?’ 하는 생각이 들 수 있다(내가 그랬다). 하지만 손에 익은 작업이더라도 문서로 만들면서 생각이 정리되었고, 미처 몰랐던 부분도 알게 되었다.&lt;/p&gt;
+
+&lt;p&gt;정리해보니 나는 수동 배포 작업을 이렇게 하고 있었다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;로컬 머신에서 빌드 도구로 소스 코드를 빌드해 jar 파일(이하 아티팩트)을 만든다&lt;/li&gt;
+  &lt;li&gt;ftp 앱으로 원격 서버에 접속해서 로컬 머신에 있는 아티팩트를 원격 서버로 전송한다&lt;/li&gt;
+  &lt;li&gt;로컬 머신에서 ssh로 원격 서버에 접속 후 애플리케이션을 실행한다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/automate-deploy/deploy-flow-manual.png&quot; alt=&quot;수동 배포 과정&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h4 id=&quot;자동화에-쓸-기술을-정하자&quot;&gt;자동화에 쓸 기술을 정하자&lt;/h4&gt;
+
+&lt;p&gt;어떤 기술을 써서 자동화해야할까? 작업을 자동화하는 데 쓸 수 있는 기술에 다양한 선택지가 있을 수 있다. 배포 작업을 자동화하는 데 쓸 수 있는 기술도 여러가지였다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/images/automate-deploy/deploy-tools.png&quot; alt=&quot;책&quot; width=&quot;700&quot; height=&quot;400&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;어떤 기술을 써야할까? &lt;sup id=&quot;fnref:deploy-tools&quot;&gt;&lt;a href=&quot;#fn:deploy-tools&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;다양한 기술 중 구현에 쓸 것을 결정할 때, 나는 구현에 드는 시간을 절약해줄만한 점을 기준으로 삼았다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자동화하려는 작업에 &lt;strong&gt;프로젝트에서 이미 쓰고 있는 기술&lt;/strong&gt;을 적용할 수 있는가?&lt;/li&gt;
+  &lt;li&gt;자동화해야 하는 작업을 직접 구현하지 않고도 &lt;strong&gt;플러그인 형식으로 가져다 쓸 수 있도록 제공&lt;/strong&gt;되는 경우가 있는가?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이런 점을 고려해 깃헙 액션을 이용하기로 결정했다. 프로젝트에서 이 기술을 이미 쓰고 있었고, 미리 구현된 플러그인(액션)을 제공해 작업을 자동화할 때 활용할 수 있을 것으로 기대했다.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h4 id=&quot;자동화-발동-조건을-고려하자&quot;&gt;자동화 발동 조건을 고려하자&lt;/h4&gt;
+
+&lt;p&gt;작업을 언제 자동으로 실행해야할까? 책 &amp;lt;실용주의 자동화&amp;gt;&lt;sup id=&quot;fnref:practical-automation&quot;&gt;&lt;a href=&quot;#fn:practical-automation&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;에서는 자동화의 발동 조건을 다음 세 가지로 분류한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령 입력 시 실행하거나&lt;/li&gt;
+  &lt;li&gt;특정 시간마다 실행하거나&lt;/li&gt;
+  &lt;li&gt;어떤 이벤트 발생 시점에 실행하거나&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;프로젝트 상황을 생각했을 때 어떤 조건을 골랐을 때 가장 생산적일지를 고민해봤다. 프로젝트는 PR 단위로 기능을 구현하고 있었고, 기능 구현 완료 시점에 배포 작업이 실행되도록 하는 게 가장 효율적이라고 판단했다. 따라서 PR를 메인 브랜치에 병합하는 (이벤트가 발생하는) 시점에 배포 작업을 자동으로 실행하기로 했다.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h4 id=&quot;수동-작업을-자동화하자&quot;&gt;수동 작업을 자동화하자&lt;/h4&gt;
+
+&lt;p&gt;다음으로 문서화한 단계를 자동화했다.&lt;/p&gt;
+
+&lt;p&gt;먼저 기술(깃헙 액션)을 어떻게 써야할지 익혔다. 이때 블로그나 깃허브, 기술 문서의 튜토리얼에서 소스 코드를 가져와 실행할 수 있는 환경을 만들어 &lt;strong&gt;피드백을 재빨리 얻을 수 있도록&lt;/strong&gt;&lt;sup id=&quot;fnref:why-prefer-fast-feedback&quot;&gt;&lt;a href=&quot;#fn:why-prefer-fast-feedback&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; 하고, 내 프로젝트에 맞게 바꿔나가면서 모르는 부분이 나오면 공식 문서를 참고했다.&lt;/p&gt;
+
+&lt;p&gt;깃헙 액션을 적용하면 기존 배포 과정은 다음과 같이 달라지게 된다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;로컬 머신은 수정한 소스 코드를 깃허브에 push&lt;sup id=&quot;fnref:why-push&quot;&gt;&lt;a href=&quot;#fn:why-push&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;한다&lt;/li&gt;
+  &lt;li&gt;깃헙액션 서버는 로컬 머신이 깃허브에 push한 최신 커밋의 소스 코드를 받아온다&lt;/li&gt;
+  &lt;li&gt;깃헙액션 서버는 빌드 도구로 소스 코드를 빌드해 아티팩트를 만든다&lt;/li&gt;
+  &lt;li&gt;깃헙액션 서버는 ftp 앱으로 원격 서버에 접속해서 아티팩트를 원격 서버로 전송한다&lt;/li&gt;
+  &lt;li&gt;깃헙액션 서버는 ssh로 원격 서버에 접속 후 애플리케이션을 실행한다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/automate-deploy/deploy-flow-automatic-one-server--.png&quot; alt=&quot;자동 배포 과정&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;기존에는 로컬 머신이 모든 작업을 담당했지만, 깃헙액션 서버가 이 역할을 담당하도록 바뀌었다. 위 다이어그램의 점선 내 영역을 보면 로컬 머신만 깃헙액션 서버로 바뀌었을 뿐 수동 작업 과정과 동일하다는 것을 확인할 수 있다. 이제 로컬 머신은 변경한 소스 코드를 원격 저장소에 푸시해서 배포 발동 조건을 만드는 역할만 하도록 바뀌었다.&lt;/p&gt;
+
+&lt;p&gt;이 단계에 맞게 배포 작업의 각 단계를 자동화했다. 이때 쓸 수 있는 플러그인이 있다면 활용하고, 없을 경우 셸 스크립트를 구현해서 깃헙액션 스크립트에 넣었다.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h4 id=&quot;잘-동작하는지-테스트로-확인하자&quot;&gt;잘 동작하는지 테스트로 확인하자&lt;/h4&gt;
+
+&lt;p&gt;구현한 코드가 잘 동작하는지 확인하려면 테스트가 필요하다. 나는 배포 자동화를 테스트할 테스트용 브랜치를 만들어 테스트했다. 소스 코드를 원격 저장소에 push했을 때 자동 배포 작업이 실행되도록 한 뒤, 예상한 동작을 하는지 확인하고, 문제가 있으면 코드를 바꿔 다시 테스트했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/automate-deploy/test-automation.png&quot; alt=&quot;테스트&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;나는 모든 단계에 대한 자동화 코드를 전부 짠 상태에서 테스트를 시작했는데, 이러면 문제의 원인이 되는 곳을 찾기가 어려워서 테스트하기가 번거로웠다. 확인하려는 단계만 남기고 주석처리해서 번거로움을 완화할 순 있었지만, 가능하다면 단계별로 구현하고 바로 테스트하는 편이 나은 것 같다.&lt;/p&gt;
+
+&lt;p&gt;테스트할 때 피드백 주기가 짧은 것이 유리하다. 피드백 주기가 길면 테스트 횟수가 많아질수록 구현까지 드는 시간도 그만큼 늘어나기 때문이다. 배포 작업을 실행할 조건은 PR을 메인 브랜치로 머지했을 때였지만, 이 조건에선 테스트 결과를 한 번 확인하는 데 시간이 너무 오래 걸렸다. 대신 테스트할 때만 배포 작업 실행 조건을 원격 저장소에 push하는 것으로 바꿔서 피드백 주기를 짧게 했다.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3 id=&quot;마치며&quot;&gt;마치며&lt;/h3&gt;
+
+&lt;h4 id=&quot;자동화를-통해-얻은-것&quot;&gt;자동화를 통해 얻은 것&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;배포 자동화로 배포 작업에 소모되는 시간을 다른 더 중요한 작업에 사용할 수 있게 되었다.&lt;/li&gt;
+  &lt;li&gt;실수할 가능성이나 작업 빈도에 구애받지 않고 배포할 수 있게 되었다. 새 작업 내용을 빠른 시간 내에 테스트해본다거나 다른 팀원과 공유하는 등의 작업이 용이해졌다.&lt;/li&gt;
+  &lt;li&gt;스케일 아웃 등 프로젝트 인프라가 확장되더라도 배포 작업에 드는 시간이 늘어나지 않게 되었다.&lt;sup id=&quot;fnref:you-didnt-consider-scale-out&quot;&gt;&lt;a href=&quot;#fn:you-didnt-consider-scale-out&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;구현한-코드를-확인하려면&quot;&gt;구현한 코드를 확인하려면?&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;배포 자동화를 적용한 프로젝트는 여기서 확인할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;jekyll-linkpreview-wrapper&quot;&gt;
+  &lt;div class=&quot;jekyll-linkpreview-wrapper-inner&quot;&gt;
+    &lt;div class=&quot;jekyll-linkpreview-content&quot;&gt;
+      &lt;div class=&quot;jekyll-linkpreview-image&quot;&gt;
+        &lt;a href=&quot;https://github.com/rogarithm/sool-dam-a&quot; target=&quot;_blank&quot;&gt;
+          &lt;img src=&quot;https://opengraph.githubassets.com/0ea9091114c989ec11f0b7f0b22b7faf8b65b502b0a021eede5351c375d2625f/rogarithm/sool-dam-a&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;jekyll-linkpreview-body&quot;&gt;
+        &lt;h2 class=&quot;jekyll-linkpreview-title&quot;&gt;
+          &lt;a href=&quot;https://github.com/rogarithm/sool-dam-a&quot; target=&quot;_blank&quot;&gt;GitHub - rogarithm/sool-dam-a&lt;/a&gt;
+        &lt;/h2&gt;
+        &lt;div class=&quot;jekyll-linkpreview-description&quot;&gt;Contribute to rogarithm/sool-dam-a development by creating an account on GitHub.&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;jekyll-linkpreview-footer&quot;&gt;
+      &lt;a href=&quot;//github.com&quot; target=&quot;_blank&quot;&gt;github.com&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;깃헙액션 스크립트는 여기서 확인할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;jekyll-linkpreview-wrapper&quot;&gt;
+  &lt;div class=&quot;jekyll-linkpreview-wrapper-inner&quot;&gt;
+    &lt;div class=&quot;jekyll-linkpreview-content&quot;&gt;
+      &lt;div class=&quot;jekyll-linkpreview-image&quot;&gt;
+        &lt;a href=&quot;https://github.com/rogarithm/sool-dam-a&quot; target=&quot;_blank&quot;&gt;
+          &lt;img src=&quot;https://opengraph.githubassets.com/0ea9091114c989ec11f0b7f0b22b7faf8b65b502b0a021eede5351c375d2625f/rogarithm/sool-dam-a&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;jekyll-linkpreview-body&quot;&gt;
+        &lt;h2 class=&quot;jekyll-linkpreview-title&quot;&gt;
+          &lt;a href=&quot;https://github.com/rogarithm/sool-dam-a&quot; target=&quot;_blank&quot;&gt;sool-dam-a/deploy-on-merge.yml at main · rogarithm/sool-dam-a&lt;/a&gt;
+        &lt;/h2&gt;
+        &lt;div class=&quot;jekyll-linkpreview-description&quot;&gt;Contribute to rogarithm/sool-dam-a development by creating an account on GitHub.&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;jekyll-linkpreview-footer&quot;&gt;
+      &lt;a href=&quot;//github.com&quot; target=&quot;_blank&quot;&gt;github.com&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:xkcd&quot;&gt;
+      &lt;p&gt;원본은 &lt;a href=&quot;https://xkcd.com/974/&quot;&gt;여기&lt;/a&gt;, 번역본은 &lt;a href=&quot;https://twitter.com/nagato708/status/736477592023224320?s=20&quot;&gt;여기&lt;/a&gt;서 확인할 수 있다. &lt;a href=&quot;#fnref:xkcd&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:time-book&quot;&gt;
+      &lt;p&gt;시스템 관리자를 위한 시간관리 전략. 토머스 리먼첼리 저, 한빛 미디어. 현재 절판 상태다. 도서관에서 빌려 보거나 중고 도서를 구매해야 볼 수 있다. &lt;a href=&quot;#fnref:time-book&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:deploy-tools&quot;&gt;
+      &lt;p&gt;이미지 출처: &lt;a href=&quot;https://www.czerniga.it/2022/03/27/find-your-best-ci-cd-tool/&quot;&gt;https://www.czerniga.it/2022/03/27/find-your-best-ci-cd-tool/&lt;/a&gt; &lt;a href=&quot;#fnref:deploy-tools&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:practical-automation&quot;&gt;
+      &lt;p&gt;실용주의 프로그래머를 위한 프로젝트 자동화, 마이크 클라크 저, 인사이트. 책의 24p에 나온 자동화의 유형을 정리한 것이다. 이 책도 절판되었다. &lt;a href=&quot;#fnref:practical-automation&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:why-prefer-fast-feedback&quot;&gt;
+      &lt;p&gt;공식 문서를 처음부터 읽고나서 구현해보려고도 했지만, 기술 문서를 읽고 이해하는 데 시간이 오래 걸리기도 했고, 읽기만 하면 제대로 이해했는지 피드백을 빨리 얻기 어려웠다. &lt;a href=&quot;#fnref:why-prefer-fast-feedback&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:why-push&quot;&gt;
+      &lt;p&gt;그렇다. 설정한 자동화 발동 조건과 다르다. 이렇게 설명하는 게 이해하기에 좀 더 편할 것으로 판단했고, 실제로 테스트할 때 git push를 발동 조건으로 쓰기도 했다. &lt;a href=&quot;#fnref:why-push&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:you-didnt-consider-scale-out&quot;&gt;
+      &lt;p&gt;여러 대의 서버에 배포할 때 구현할 절차까지 다루기엔 글이 너무 길어져서 해당 내용은 다루지 않았지만, 실제로 프로젝트에서는 이 점도 고려해 구현했다. 그래서 이 항목을 추가했다. &lt;a href=&quot;#fnref:you-didnt-consider-scale-out&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 15 Apr 2023 06:18:23 +0900</pubDate>
+        <link>http://localhost:4000/2023/04/15/automate-deployment.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/04/15/automate-deployment.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>일반 텍스트로 가계부 관리하기</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#배경&quot; id=&quot;markdown-toc-배경&quot;&gt;배경&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#왜-시작했나&quot; id=&quot;markdown-toc-왜-시작했나&quot;&gt;왜 시작했나&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#왜-가계부인가&quot; id=&quot;markdown-toc-왜-가계부인가&quot;&gt;왜 가계부인가&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#일반-텍스트의-힘-적용-과정&quot; id=&quot;markdown-toc-일반-텍스트의-힘-적용-과정&quot;&gt;일반 텍스트의 힘 적용 과정&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#가계부-포맷-변경&quot; id=&quot;markdown-toc-가계부-포맷-변경&quot;&gt;가계부 포맷 변경&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#텍스트-에디터로-데이터-입력&quot; id=&quot;markdown-toc-텍스트-에디터로-데이터-입력&quot;&gt;텍스트 에디터로 데이터 입력&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#깃으로-버전-관리&quot; id=&quot;markdown-toc-깃으로-버전-관리&quot;&gt;깃으로 버전 관리&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#셸-가지고-놀기-적용-과정&quot; id=&quot;markdown-toc-셸-가지고-놀기-적용-과정&quot;&gt;셸 가지고 놀기 적용 과정&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#가계부-알림-시스템&quot; id=&quot;markdown-toc-가계부-알림-시스템&quot;&gt;가계부 알림 시스템&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#지출-내역-분석&quot; id=&quot;markdown-toc-지출-내역-분석&quot;&gt;지출 내역 분석&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#결론&quot; id=&quot;markdown-toc-결론&quot;&gt;결론&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;책 &amp;lt;실용주의 프로그래머&amp;gt; 중 ‘일반 텍스트의 힘’과 ‘셸 가지고 놀기’를 가계부 관리에 적용해본 경험을 이야기한다. 글에 나온 스크립트의 전체 소스 코드는 &lt;a href=&quot;https://github.com/rogarithm/ledger&quot;&gt;여기&lt;/a&gt;서 확인할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;배경&quot;&gt;배경&lt;/h2&gt;
+
+&lt;h3 id=&quot;왜-시작했나&quot;&gt;왜 시작했나&lt;/h3&gt;
+
+&lt;p&gt;기술 서적을 자주 읽는다. 책을 읽고 나면 책에 나온 내용을 프로그램을 짤 때 써먹을 수 있겠다는 기대를 한다. 하지만 이해했다고 생각했던 내용을 적용해보려고 프로그램을 짜보면 잘 되지 않아 당황한 적이 자주 있었다.&lt;/p&gt;
+
+&lt;p&gt;거꾸로 생각하면 읽은 내용을 이해했는지는 실제로 적용해보면 확실히 알 수 있다. 또한 해보면서 겪는 시행착오는 읽은 내용을 더 깊이 이해하게 해주곤 한다. 때문에 책에 나온 내용을 실제로 적용해본다. 읽는 책마다 하기는 어렵겠지만, 가능하면 프로그램을 만들어보고, 그게 어렵다면 적어도 예제 코드를 따라 치고 실행해본다.&lt;/p&gt;
+
+&lt;p&gt;실용주의 프로그래머는 서로 독립적이거나 부분적으로 연관이 있는 다양한 주제의 글로 이루어진 개발 서적이다. 나는 가끔씩 생각날 때마다 관심 가는 주제를 읽고는 하는데, 읽은 내용 중 ‘일반 텍스트의 힘’과 ‘셸 가지고 놀기’를 실제로 적용해보고 싶었다.&lt;/p&gt;
+
+&lt;p&gt;주제에 대해 요약하자면,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;‘일반 텍스트의 힘’에서는 이진 데이터가 아니라 일반 텍스트로 데이터를 관리하면 좋은 점이 많다고 이야기한다. 데이터가 일반 텍스트 형식이면 데이터를 다루는 데 여러 도구(버전 관리, 에디터, 명령줄 도구 등)를 이용할 수 있기 때문이다.&lt;/li&gt;
+  &lt;li&gt;‘셸 가지고 놀기’에서는 IDE나 GUI 기반 도구를 쓰는 게 편할 때도 있지만, 셸을 쓰면 훨씬 간단하게 처리할 수 있는 경우도 있다고 이야기한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;왜-가계부인가&quot;&gt;왜 가계부인가&lt;/h3&gt;
+
+&lt;p&gt;읽은 내용을 어디에 적용해야 할지 고민했다. 무턱대고 생각나는 걸 프로그램으로 만들었다가는 잘 쓰지 않게 되어 디렉토리 한구석에 둔 채로 잊힐지도 몰랐기 때문이다. 자주 들르는 애자일 이야기 블로그에서 &lt;a href=&quot;http://egloos.zum.com/agile/v/5854608&quot;&gt;무엇을 프로그래밍 할 것인가&lt;/a&gt;와 &lt;a href=&quot;http://egloos.zum.com/agile/v/2807583&quot;&gt;프로그래머의 위기지학&lt;/a&gt; 두 글을 읽고 나서 1) 내가 자주 쓸 프로그램인지, 2) 나에게 가치 있는 프로그램인지 두 가지 기준을 가지고 적용해볼 주제를 생각해봤다.&lt;/p&gt;
+
+&lt;p&gt;고민 끝에 가계부를 주제로 정했다. 가계부 작성을 자주 하기 때문에(1년이 넘는 기간 동안 스프레드 시트 앱으로 가계부를 작성하고 있다) 적용하게 되면 자주 사용할 것 같았고, 현재 방식에 반복 작업이 많아 이를 개선할 수 있다면 나에게 가치가 있을 것 같았다. 기존 가계부 데이터는 스프레드 시트에서만 쓸 수 있는 이진 형식이기도 해서 실용주의 프로그래머에서 읽은 내용을 적용하기에도 적당했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;일반-텍스트의-힘-적용-과정&quot;&gt;일반 텍스트의 힘 적용 과정&lt;/h2&gt;
+
+&lt;p&gt;이진 형식인 가계부 데이터를 어떤 고민을 거쳐 일반 텍스트 형식으로 바꿨는지, 그러고 나서 이전에 느꼈던 가계부 관리의 불편함이 어떻게 개선되었는지를 이야기한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;가계부-포맷-변경&quot;&gt;가계부 포맷 변경&lt;/h3&gt;
+
+&lt;p&gt;이전에 스프레드 시트 앱에 쓰던 가계부 형식을 참고해서 일반 텍스트로 바꿨다. 이전 형식은 다음과 같았다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;지출 내역 데이터는 날짜, 항목, 금액, 분류, 상세 설명, 계좌로 구성&lt;/li&gt;
+  &lt;li&gt;날짜 형식은 mm.dd(1월 1일과 같이 문자 수가 하나일 경우도 01.01과 같이 입력)&lt;/li&gt;
+  &lt;li&gt;지출한 금액은 +, 벌어들인 금액은 -로 입력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;문제가 된 점은 같은 행의 항목을 어떤 문자로 구분할지였다. 최종적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;' | '&lt;/code&gt; 문자열로 결정했고, 결정하기까지의 과정에서 떠올린 선택지를 실제로 지출 내역 작성에 써보면서 어떤 게 더 편한지 비교했다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;쉼표(&lt;code class=&quot;highlighter-rouge&quot;&gt;,&lt;/code&gt;) 문자: 입력하기 편했다. 처음엔 가계부 분석할 때 데이터 정제를 간단히 할 수 있을 것 같다고 생각했다. 하지만 지출 내역 설명 항목이나 상세 설명 항목에 쉼표가 들어갈 때가 있어 생각했던 것만큼 간단하지 않을 것 같아 쓰지 않았다.&lt;/li&gt;
+  &lt;li&gt;탭 문자: 눈에 안 보이는 문자이다 보니 지출 내역 입력할 때 알아보기 힘들 뿐 아니라 입력 후 잘못 입력한 곳이 있는지 알아차리기 어려웠다.&lt;/li&gt;
+  &lt;li&gt;콜론(&lt;code class=&quot;highlighter-rouge&quot;&gt;':'&lt;/code&gt;) 문자: 유닉스의 일반 텍스트 포맷 데이터베이스에서 쓰는 문자여서 적용해봤지만, 각 셀이 서로 붙어있게 되어서 가독성이 떨어졌다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;' | '&lt;/code&gt; 문자열: 입력이 조금 번거롭긴 하지만 입력된 항목 양옆이 빈칸으로 구분되어 입력된 내용을 구분해서 보기가 비교적 편했다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;포맷 변경 후 이런 식으로 가계부를 입력한다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Date | Description | Amount | Category | Details | Account
+01.01 | 커피 | 8500 | coffee | 프릳츠 | kakao
+01.01 | 햄버거 | 4700 | eat_out | 맥도날드 | kakao
+01.03 | 커피 원두 | 14000 | coffee | 디벨로핑룸 | eum
+01.04 | 버스카드 | 67500 | transport |  | shinhan
+01.09 | 커피 | 5500 | coffee | 디벨로핑룸 | eum
+01.13 | 햄버거 | 6900 | eat_out | 맥도날드 | eum
+01.22 | 드립 커피 | 1500 | coffee | 맥도날드 | kakao
+01.26 | 전화 요금 | 24750 | phone |  | shinhan
+02.01 | 햄버거 | 4700 | eat_out | 맥도날드 | kakao
+02.04 | 책 | 37890 | book | 교보문고 | kakao
+02.04 | 햄버거 | 5200 | eat_out | 맥도날드 | kakao
+02.07 | 햄버거 | 4700 | eat_out | 맥도날드 | kakao
+02.11 | 책 | 10340 | book | 알라딘 | kakao&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;텍스트-에디터로-데이터-입력&quot;&gt;텍스트 에디터로 데이터 입력&lt;/h3&gt;
+
+&lt;p&gt;스프레드 시트 앱으로 가계부를 관리할 때는 데이터 입력이 번거로웠다. 웬만하면 하루에 카드 결제를 두 번은 하니까 같은 날짜를 반복해서 입력해야 했기 때문이다. 자동 완성도 매끄럽지 않다 보니 데이터 입력에 시간이 오래 걸렸다.&lt;/p&gt;
+
+&lt;p&gt;일반 텍스트 파일로 가계부를 관리하니 문서 편집기를 데이터 입력에 쓸 수 있게 되었다. 나는 주로 vim을 쓰는데, 코드나 문서를 효율적으로 편집할 수 있게 해주는 vim의 기능을 가계부 편집할 때도 똑같이 쓸 수 있어 전보다 편하게 가계부를 작성할 수 있게 되었다.&lt;/p&gt;
+
+&lt;h3 id=&quot;깃으로-버전-관리&quot;&gt;깃으로 버전 관리&lt;/h3&gt;
+
+&lt;p&gt;종종 지출 내역 일부를 적지 않거나, 포맷이 맞지 않게 내용을 작성하는 등의 실수를 하게 되는데, 이럴 때 어디서 문제가 생겼는지 확인하려면 이전에 기록한 내용을 하나씩 유심히 확인해야 했다. 고쳤더라도 잘 고친 건지 확실하지 않아서 난감한 적도 있었다.&lt;/p&gt;
+
+&lt;p&gt;깃으로 버전 관리를 했다면 이런 문제가 생겼을 때 커밋 단위로 바뀐 내용을 확인해서 한 번에 봐야 할 범위를 줄일 수 있다. 하지만 가계부가 이진 포맷 파일이기에 깃으로 버전 관리하는 것이 의미가 없다. 바뀐 내용을 사람이 알아보기 어렵기 때문이다. 하더라도 백업 파일을 만들어서 단순하게 버전 관리하는 정도였고, 앞선 문제에 큰 도움은 안 되었다.&lt;/p&gt;
+
+&lt;p&gt;지출 내역을 일반 텍스트 파일로 바꾸고 나서는 프로그램을 개발할 때처럼 깃으로 버전 관리할 수 있게 되었고, 전과 같은 문제를 만나도 전보다 편하다. 이 외에도 고칠 곳이 많을 때, 기존 내용을 커밋하고 새로 브랜치를 만들어서 고치고, 오류가 있다면 간단히 이전 상태로 되돌릴 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;셸-가지고-놀기-적용-과정&quot;&gt;셸 가지고 놀기 적용 과정&lt;/h2&gt;
+
+&lt;p&gt;셸을 이용해 가계부 관리와 분석을 편하게 할 수 있는 스크립트를 만들고 활용한 경험을 이야기한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;가계부-알림-시스템&quot;&gt;가계부 알림 시스템&lt;/h3&gt;
+
+&lt;p&gt;지출 내역을 써야 한다는 걸 잊는 날이 자주 있다. 잊어버린 채로 더 오랜 시간이 지날수록 입력해야 할 지난 지출 내역이 늘어났다. 문제가 없을 때도 있었지만, 돈을 어디에 쓴 건지 기억이 안 나는 경우도 자주 있었다. 한꺼번에 여러 지출 내역을 입력할 때는 은행 앱의 지출 내역을 일일이 눈으로 보고 입력하다 보니 지출 내역 일부를 빼먹는 경우도 있었다. 더 문제였던 건 빼먹은 데이터가 있다는 걸 모른 채 지출 내역을 추가하다가 나중에 은행 앱과 가계부의 잔액이 서로 맞지 않는 것을 발견하면 어디가 문제인지 찾는 게 어려워지는 점이었다.&lt;/p&gt;
+
+&lt;p&gt;가계부를 일반 텍스트로 만드니 일반 텍스트를 다룰 수 있는 각종 도구를 가계부를 다루는 데도 쓸 수 있게 되었다. 그래서 파일 내용을 기준으로 가계부 작성이 필요하다고 알림을 보여주는 간단한 스크립트를 만들었다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;ledger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/Users/sehun/personal/ledger/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;date -v -1d &lt;span class=&quot;s2&quot;&gt;&quot;+%Y&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.txt&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;grep -e &lt;span class=&quot;s2&quot;&gt;&quot;^&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;date -v -1d &lt;span class=&quot;s2&quot;&gt;&quot;+%m.%d&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ledger&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;date -v -1d &lt;span class=&quot;s2&quot;&gt;&quot;+%m.%d&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; ; &lt;span class=&quot;k&quot;&gt;then
+	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;display notification &lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;어제 &lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\)&lt;/span&gt; 지출 내역을&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+	작성하지 않으셨네요. &lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt; with title &lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;가계부&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;  | osascript
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;스크립트는 가계부 파일에서 전날 날짜를 검색한 결과가 없으면 전날 지출 내역이 작성되어 있지 않다는 뜻이므로 컴퓨터 화면에 알림 뱃지를 띄우는 일을 한다. 이 스크립트를 crontab에 등록해서 매일 특정 시간마다 스크립트를 자동으로 실행할 수 있도록 했다.&lt;/p&gt;
+
+&lt;h3 id=&quot;지출-내역-분석&quot;&gt;지출 내역 분석&lt;/h3&gt;
+
+&lt;p&gt;가계부를 계속해서 썼던 건 내가 알고 싶은 정보를 가계부 분석을 통해 얻고 싶어서였다. 예를 들어 지출 중에 꼭 필요하지 않은 지출이 있었는지 확인하고 소비 습관을 개선하거나, 현재 남은 돈을 확인해서 소비를 줄여야 할지 결정하는 데 가계부 기록을 활용하고 싶었다.&lt;/p&gt;
+
+&lt;p&gt;이전에도 스프레드 시트 앱에서 제공하는 함수를 이용해 분석을 시도해본 적이 있었다. 하지만 생각했던 것만큼 잘되지 않아서 그만두게 되었다. 가계부 포맷이 일반 텍스트로 바뀌니까 지출 내역 분석 문제를 일반 텍스트를 어떻게 가공할지의 문제로 볼 수 있게 되었다. 나는 셸을 써서 구분자나 특정 날짜, 카테고리를 기준으로 가계부를 필터링해 지출 내역을 확인하거나 해당하는 지출액 총합을 계산할 방법을 생각해봤다.&lt;/p&gt;
+
+&lt;p&gt;여러 번의 시행착오를 거쳐 작은 스크립트 여러 개를 만들었다. 스크립트는 출력을 다음 명령의 입력으로 받을 수 있도록 해서 다른 스크립트나 명령과 조합해 쓸 수 있도록 했다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어 기간(3월 13일부터 3월 19일까지) 내 지출 총합을 계산하는 스크립트 조합은 다음과 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ledger-script-flow.png&quot; alt=&quot;스크립트 실행 흐름&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;각 스크립트의 역할은 다음과 같다. (스크립트 이름을 클릭하면 소스를 확인할 수 있다)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rogarithm/ledger/blob/main/ledger/ext_date_range.sh&quot;&gt;ext_date_range&lt;/a&gt; 스크립트는 입력받은 두 날짜 사이 날짜 목록을 출력한다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rogarithm/ledger/blob/main/ledger/ext_pay.sh&quot;&gt;ext_pay&lt;/a&gt; 스크립트는 날짜 목록을 받아서 이 기간에 해당하는 지출 내역 목록을 출력한다.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rogarithm/ledger/blob/main/ledger/comp_sum.sh&quot;&gt;comp_sum&lt;/a&gt; 스크립트는 지출 내역 목록을 받아서 목록 내 지출 금액의 총합을 계산해 출력한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;입출력 형식만 일치한다면 내가 짠 스크립트를 다른 유닉스 명령(grep, sed, cut 등)과 조합할 수도 있다. 이 점은 알고자 하는 문제의 답을 찾는 것을 유연하게 해줬다. 이미 구현된 도구를 해결 과정에 활용할 수 있다면, 굳이 새로운 스크립트를 만들지 않아도 되었다. 몇 가지 예시를 들면 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;지금 남아있는 돈은 얼마일까
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./ext_date_range.sh 01.01 03.19 | ./ext_pay.sh | ./comp_sum.sh&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;특정 계좌에 남은 총액은 얼마일까
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./ext_date_range.sh 01.01 03.19 | ./ext_pay.sh | grep kakao |\ 
+./comp_sum.sh&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;기간 내 지출 내역을 계좌 이름으로 다시 필터링(&lt;code class=&quot;highlighter-rouge&quot;&gt;grep kakao&lt;/code&gt;)해서 기간 내 해당 계좌의 지출액 합을 계산한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;travel 카테고리에 속하는 지출 내역에는 무엇이 있을까
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cat ~/personal/finance/2023.txt | grep travel&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;가계부를 카테고리 이름으로 필터링한다. 만든 스크립트를 쓰지 않고 해결할 수 있는 문제다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;결론&quot;&gt;결론&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;책에서 읽은 내용을 실제로 적용해보는 건 읽기만 하는 것보다 훨씬 더 많은 노력이 필요한 일이었다.&lt;/li&gt;
+  &lt;li&gt;이런 노력을 가능한 자발적으로 하기 위해 적용할 주제 선정에 많은 고민을 했고, 결과적으로 잘한 일이었다고 생각한다.&lt;/li&gt;
+  &lt;li&gt;일반 텍스트로 지식을 관리할 때 얻는 장점이 많다.&lt;/li&gt;
+  &lt;li&gt;나만 쓸 프로그램을 만드니까 ‘필요한 기능’이 무엇인지 쉽게 판단할 수 있었다. 바뀐 가계부 형식과 스크립트에는 변경에 취약한 면이 있다. 하지만 혼자 쓸 프로그램이기에 당장 중요하지 않았고, 그보다 내가 불편한 점을 개선해줄 수 있는 기능을 우선 구현하려고 하게 되었다.&lt;/li&gt;
+  &lt;li&gt;전보다 가계부 쓰는 게 편해졌고, 필요한 기능을 어떻게 구현할지 고민하는 일도 즐거워졌다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 11 Mar 2023 14:12:40 +0900</pubDate>
+        <link>http://localhost:4000/pragmatic/programmer/2023/03/11/ledger-in-plain-text.html</link>
+        <guid isPermaLink="true">http://localhost:4000/pragmatic/programmer/2023/03/11/ledger-in-plain-text.html</guid>
+        
+        
+        <category>pragmatic</category>
+        
+        <category>programmer</category>
+        
+      </item>
+    
+  </channel>
+</rss>

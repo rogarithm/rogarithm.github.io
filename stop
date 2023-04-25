@@ -1,0 +1,1 @@
+kill $(ps -ef | grep jekyll | grep -v grep | sed 's/^ *//' | cut -d' ' -f2)

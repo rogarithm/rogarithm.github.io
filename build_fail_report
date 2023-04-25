@@ -1,0 +1,78 @@
+kramdown 버전 호환성이 문제인 것 같다.
+다음 에러로 검색했을 때,
+/Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown/header.rb:48:in `[]': no implicit conversion of String into Integer (TypeError)
+이 이슈를 발견했다. https://github.com/gettalong/kramdown/issues/557
+kramdown 버전을 낮춰야 할 것 같다.
+gem list에서 kramdown 버전을 확인해보니 1.17.0였다.
+지우고 다시 깔자
+gem uninstall kramdown
+gem install kramdown -v 1.6.0
+Gemfile.lock에 적용되지 않았다.
+bundle update로 적용했다.
+적용되지 않은 걸 확인했다.
+여기를 확인해서 시도해보자. https://stackoverflow.com/a/46833260
+bundle update kramdown --patch
+
+
+
+
+Configuration file: /Users/sehun/personal/rogarithm.github.io/_config.yml
+            Source: /Users/sehun/personal/rogarithm.github.io
+       Destination: /Users/sehun/personal/rogarithm.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+
+WARN: Unresolved specs during Gem::Specification.reset:
+      ffi (< 2, >= 0.5.0)
+WARN: Clearing out unresolved specs.
+Please report a bug if this causes problems.
+Configuration file: /Users/sehun/personal/rogarithm.github.io/_config.yml
+            Source: /Users/sehun/personal/rogarithm.github.io
+       Destination: /Users/sehun/personal/rogarithm.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+  Conversion error: Jekyll::Converters::Markdown encountered an error while converting '_posts/2023-03-11-ledger-in-plain-text.markdown':
+                    no implicit conversion of String into Integer
+/Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown/header.rb:48:in `[]': no implicit conversion of String into Integer (TypeError)
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown/header.rb:48:in `parse_header_contents'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown/header.rb:34:in `parse_atx_header'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown.rb:148:in `block (2 levels) in parse_blocks'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown.rb:146:in `each'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown.rb:146:in `any?'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown.rb:146:in `block in parse_blocks'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown.rb:144:in `catch'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown.rb:144:in `parse_blocks'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/kramdown.rb:89:in `parse'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/parser/base.rb:69:in `parse'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/kramdown-1.17.0/lib/kramdown/document.rb:104:in `initialize'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/converters/markdown/kramdown_parser.rb:23:in `new'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/converters/markdown/kramdown_parser.rb:23:in `convert'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/converters/markdown.rb:60:in `convert'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/renderer.rb:87:in `block in convert'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/renderer.rb:85:in `each'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/renderer.rb:85:in `reduce'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/renderer.rb:85:in `convert'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/renderer.rb:64:in `run'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/excerpt.rb:76:in `output'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/excerpt.rb:60:in `to_s'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/document.rb:343:in `to_liquid'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/renderer.rb:37:in `run'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/site.rb:171:in `block (2 levels) in render'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/site.rb:169:in `each'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/site.rb:169:in `block in render'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/site.rb:168:in `each'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/site.rb:168:in `render'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/site.rb:59:in `process'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/command.rb:28:in `process_site'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/commands/build.rb:60:in `build'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/commands/build.rb:35:in `process'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/lib/jekyll/commands/build.rb:18:in `block (2 levels) in init_with_program'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `call'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `block in execute'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `each'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `execute'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/mercenary-0.3.6/lib/mercenary/program.rb:42:in `go'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/mercenary-0.3.6/lib/mercenary.rb:19:in `program'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/jekyll-3.0.0/bin/jekyll:17:in `<top (required)>'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/bin/jekyll:23:in `load'
+	from /Users/sehun/.rbenv/versions/2.0.0-p648/bin/jekyll:23:in `<main>'

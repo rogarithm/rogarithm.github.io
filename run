@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+nohup bundle exec jekyll s --watch > /dev/null 2> /dev/null < /dev/null &
