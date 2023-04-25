@@ -3,6 +3,7 @@ layout: post
 title: 자동화, 어떻게 해야할까?
 date: 2023-04-14 21:18:23
 categories: 
+canonical_url: "https://rogarithm.github.io/"
 ---
 * table of contents
 {:toc}
