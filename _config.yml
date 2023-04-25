@@ -10,8 +10,8 @@ title: 김세훈
 email: sehoongim@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
 # url: "http://yourdomain.com" # the base hostname & protocol for your site
-url: "https://rogarithm.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://rogarithm.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
 github_username:  rogarithm
 
 lang: "ko"
@@ -22,3 +22,10 @@ markdown: kramdown
 theme: minima
 plugins_dir:
   - jekyll-feed
+plugins:
+  - jekyll-linkpreview
+  - jekyll-seo-tag
+include:
+  - _includes/linkpreview.css
+seo:
+  canonical_url: true

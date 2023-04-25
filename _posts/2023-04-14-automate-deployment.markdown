@@ -3,7 +3,8 @@ layout: post
 title: 자동화, 어떻게 해야할까?
 date: 2023-04-14 21:18:23
 categories: 
-canonical_url: "https://rogarithm.github.io/"
+permlink: "2023/04/15/"
+canonical_url: "{{ site.url }}{{ page.url }}"
 ---
 * table of contents
 {:toc}
@@ -160,10 +161,9 @@ canonical_url: "https://rogarithm.github.io/"
 
 #### 구현한 코드를 확인하려면?
 - 배포 자동화를 적용한 프로젝트는 여기서 확인할 수 있다.
-[![프로젝트](/images/automate-deploy/sooldama-link.png)](https://github.com/rogarithm/sool-dam-a)
-
+{% linkpreview "https://github.com/rogarithm/sool-dam-a" %}
 - 깃헙액션 스크립트는 여기서 확인할 수 있다.
-[![빌드 스크립트](/images/automate-deploy/build-script-link.png)](https://github.com/rogarithm/sool-dam-a/blob/main/.github/workflows/deploy-on-merge.yml)
+{% linkpreview "https://github.com/rogarithm/sool-dam-a/blob/main/.github/workflows/deploy-on-merge.yml" %}
 
 &nbsp;
 
