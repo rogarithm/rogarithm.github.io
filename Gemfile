@@ -7,6 +7,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 # gem "rails"
 
 gem "jekyll", "= 3.5.0"
+gem "listen", "3.0.6"
 gem 'kramdown', '~> 1.17.0'
 gem 'minima'
 

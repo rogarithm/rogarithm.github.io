@@ -48,9 +48,9 @@ GEM
       listen (~> 3.0)
     kramdown (1.17.0)
     liquid (4.0.4)
-    listen (3.5.0)
-      rb-fsevent (~> 0.10, >= 0.10.3)
-      rb-inotify (~> 0.9, >= 0.9.10)
+    listen (3.0.6)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9.7)
     mercenary (0.3.6)
     metainspector (5.10.1)
       addressable (~> 2.7.0)
@@ -98,6 +98,7 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-sitemap
   kramdown (~> 1.17.0)
+  listen (= 3.0.6)
   minima
 
 BUNDLED WITH
