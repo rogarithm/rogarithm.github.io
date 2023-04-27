@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Apr 2023 22:35:49 +0900</pubDate>
-    <lastBuildDate>Tue, 25 Apr 2023 22:35:49 +0900</lastBuildDate>
+    <pubDate>Fri, 28 Apr 2023 00:49:04 +0900</pubDate>
+    <lastBuildDate>Fri, 28 Apr 2023 00:49:04 +0900</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
@@ -334,6 +334,8 @@
 
 &lt;p&gt;책 &amp;lt;실용주의 프로그래머&amp;gt; 중 ‘일반 텍스트의 힘’과 ‘셸 가지고 놀기’를 가계부 관리에 적용해본 경험을 이야기한다. 글에 나온 스크립트의 전체 소스 코드는 &lt;a href=&quot;https://github.com/rogarithm/ledger&quot;&gt;여기&lt;/a&gt;서 확인할 수 있다.&lt;/p&gt;
 
+&lt;p&gt; &lt;/p&gt;
+
 &lt;h2 id=&quot;배경&quot;&gt;배경&lt;/h2&gt;
 
 &lt;h3 id=&quot;왜-시작했나&quot;&gt;왜 시작했나&lt;/h3&gt;
@@ -351,15 +353,23 @@
   &lt;li&gt;‘셸 가지고 놀기’에서는 IDE나 GUI 기반 도구를 쓰는 게 편할 때도 있지만, 셸을 쓰면 훨씬 간단하게 처리할 수 있는 경우도 있다고 이야기한다.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt; &lt;/p&gt;
+
 &lt;h3 id=&quot;왜-가계부인가&quot;&gt;왜 가계부인가&lt;/h3&gt;
 
 &lt;p&gt;읽은 내용을 어디에 적용해야 할지 고민했다. 무턱대고 생각나는 걸 프로그램으로 만들었다가는 잘 쓰지 않게 되어 디렉토리 한구석에 둔 채로 잊힐지도 몰랐기 때문이다. 자주 들르는 애자일 이야기 블로그에서 &lt;a href=&quot;http://egloos.zum.com/agile/v/5854608&quot;&gt;무엇을 프로그래밍 할 것인가&lt;/a&gt;와 &lt;a href=&quot;http://egloos.zum.com/agile/v/2807583&quot;&gt;프로그래머의 위기지학&lt;/a&gt; 두 글을 읽고 나서 1) 내가 자주 쓸 프로그램인지, 2) 나에게 가치 있는 프로그램인지 두 가지 기준을 가지고 적용해볼 주제를 생각해봤다.&lt;/p&gt;
 
 &lt;p&gt;고민 끝에 가계부를 주제로 정했다. 가계부 작성을 자주 하기 때문에(1년이 넘는 기간 동안 스프레드 시트 앱으로 가계부를 작성하고 있다) 적용하게 되면 자주 사용할 것 같았고, 현재 방식에 반복 작업이 많아 이를 개선할 수 있다면 나에게 가치가 있을 것 같았다. 기존 가계부 데이터는 스프레드 시트에서만 쓸 수 있는 이진 형식이기도 해서 실용주의 프로그래머에서 읽은 내용을 적용하기에도 적당했다.&lt;/p&gt;
 
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
 &lt;h2 id=&quot;일반-텍스트의-힘-적용-과정&quot;&gt;일반 텍스트의 힘 적용 과정&lt;/h2&gt;
 
 &lt;p&gt;이진 형식인 가계부 데이터를 어떤 고민을 거쳐 일반 텍스트 형식으로 바꿨는지, 그러고 나서 이전에 느꼈던 가계부 관리의 불편함이 어떻게 개선되었는지를 이야기한다.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
 
 &lt;h3 id=&quot;가계부-포맷-변경&quot;&gt;가계부 포맷 변경&lt;/h3&gt;
 
@@ -397,11 +407,15 @@
 02.07 | 햄버거 | 4700 | eat_out | 맥도날드 | kakao
 02.11 | 책 | 10340 | book | 알라딘 | kakao&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
+&lt;p&gt; &lt;/p&gt;
+
 &lt;h3 id=&quot;텍스트-에디터로-데이터-입력&quot;&gt;텍스트 에디터로 데이터 입력&lt;/h3&gt;
 
 &lt;p&gt;스프레드 시트 앱으로 가계부를 관리할 때는 데이터 입력이 번거로웠다. 웬만하면 하루에 카드 결제를 두 번은 하니까 같은 날짜를 반복해서 입력해야 했기 때문이다. 자동 완성도 매끄럽지 않다 보니 데이터 입력에 시간이 오래 걸렸다.&lt;/p&gt;
 
 &lt;p&gt;일반 텍스트 파일로 가계부를 관리하니 문서 편집기를 데이터 입력에 쓸 수 있게 되었다. 나는 주로 vim을 쓰는데, 코드나 문서를 효율적으로 편집할 수 있게 해주는 vim의 기능을 가계부 편집할 때도 똑같이 쓸 수 있어 전보다 편하게 가계부를 작성할 수 있게 되었다.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
 
 &lt;h3 id=&quot;깃으로-버전-관리&quot;&gt;깃으로 버전 관리&lt;/h3&gt;
 
@@ -411,9 +425,15 @@
 
 &lt;p&gt;지출 내역을 일반 텍스트 파일로 바꾸고 나서는 프로그램을 개발할 때처럼 깃으로 버전 관리할 수 있게 되었고, 전과 같은 문제를 만나도 전보다 편하다. 이 외에도 고칠 곳이 많을 때, 기존 내용을 커밋하고 새로 브랜치를 만들어서 고치고, 오류가 있다면 간단히 이전 상태로 되돌릴 수 있다.&lt;/p&gt;
 
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
 &lt;h2 id=&quot;셸-가지고-놀기-적용-과정&quot;&gt;셸 가지고 놀기 적용 과정&lt;/h2&gt;
 
 &lt;p&gt;셸을 이용해 가계부 관리와 분석을 편하게 할 수 있는 스크립트를 만들고 활용한 경험을 이야기한다.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
 
 &lt;h3 id=&quot;가계부-알림-시스템&quot;&gt;가계부 알림 시스템&lt;/h3&gt;
 
@@ -433,6 +453,8 @@
 &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;스크립트는 가계부 파일에서 전날 날짜를 검색한 결과가 없으면 전날 지출 내역이 작성되어 있지 않다는 뜻이므로 컴퓨터 화면에 알림 뱃지를 띄우는 일을 한다. 이 스크립트를 crontab에 등록해서 매일 특정 시간마다 스크립트를 자동으로 실행할 수 있도록 했다.&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
 
 &lt;h3 id=&quot;지출-내역-분석&quot;&gt;지출 내역 분석&lt;/h3&gt;
 
@@ -476,6 +498,10 @@
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
 
 &lt;h2 id=&quot;결론&quot;&gt;결론&lt;/h2&gt;
 
