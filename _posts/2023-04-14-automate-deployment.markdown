@@ -159,12 +159,6 @@ canonical_url: "{{ site.url }}{{ page.url }}"
 - 실수할 가능성이나 작업 빈도에 구애받지 않고 배포할 수 있게 되었다. 새 작업 내용을 빠른 시간 내에 테스트해본다거나 다른 팀원과 공유하는 등의 작업이 용이해졌다.
 - 스케일 아웃 등 프로젝트 인프라가 확장되더라도 배포 작업에 드는 시간이 늘어나지 않게 되었다.[^you-didnt-consider-scale-out]
 
-#### 구현한 코드를 확인하려면?
-- 배포 자동화를 적용한 프로젝트는 여기서 확인할 수 있다.
-{% linkpreview "https://github.com/rogarithm/sool-dam-a" %}
-- 깃헙액션 스크립트는 여기서 확인할 수 있다.
-{% linkpreview "https://github.com/rogarithm/sool-dam-a/blob/main/.github/workflows/deploy-on-merge.yml" %}
-
 &nbsp;
 
 ---
