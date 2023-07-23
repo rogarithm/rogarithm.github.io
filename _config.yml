@@ -22,10 +22,3 @@ markdown: kramdown
 theme: minima
 plugins_dir:
   - jekyll-feed
-plugins:
-  - jekyll-linkpreview
-  - jekyll-seo-tag
-include:
-  - _includes/linkpreview.css
-seo:
-  canonical_url: true
