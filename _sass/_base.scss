@@ -129,6 +129,7 @@ blockquote {
  */
 pre,
 code {
+    font: $code-font-weight #{$code-font-size}/#{$base-line-height} $code-font-family;
     font-size: 15px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
