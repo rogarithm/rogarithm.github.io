@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "EasyRandom으로 테스트 데이터 만들기"
-date: 2023-07-24 00:54:58 +0900
+date: 2023-08-01 15:59:58 +0900
 categories: testing
 ---
 * table of contents
