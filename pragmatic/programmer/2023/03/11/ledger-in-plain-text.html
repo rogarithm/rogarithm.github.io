@@ -140,13 +140,13 @@
   <li>지출한 금액은 +, 벌어들인 금액은 -로 입력</li>
 </ul>
 
-<p>문제가 된 점은 같은 행의 항목을 어떤 문자로 구분할지였다. 최종적으로 <code class="highlighter-rouge">' | '</code> 문자열로 결정했고, 결정하기까지의 과정에서 떠올린 선택지를 실제로 지출 내역 작성에 써보면서 어떤 게 더 편한지 비교했다.</p>
+<p>문제가 된 점은 같은 행의 항목을 어떤 문자로 구분할지였다. 최종적으로 <code class="language-plaintext highlighter-rouge">' | '</code> 문자열로 결정했고, 결정하기까지의 과정에서 떠올린 선택지를 실제로 지출 내역 작성에 써보면서 어떤 게 더 편한지 비교했다.</p>
 
 <ul>
-  <li>쉼표(<code class="highlighter-rouge">,</code>) 문자: 입력하기 편했다. 처음엔 가계부 분석할 때 데이터 정제를 간단히 할 수 있을 것 같다고 생각했다. 하지만 지출 내역 설명 항목이나 상세 설명 항목에 쉼표가 들어갈 때가 있어 생각했던 것만큼 간단하지 않을 것 같아 쓰지 않았다.</li>
+  <li>쉼표(<code class="language-plaintext highlighter-rouge">,</code>) 문자: 입력하기 편했다. 처음엔 가계부 분석할 때 데이터 정제를 간단히 할 수 있을 것 같다고 생각했다. 하지만 지출 내역 설명 항목이나 상세 설명 항목에 쉼표가 들어갈 때가 있어 생각했던 것만큼 간단하지 않을 것 같아 쓰지 않았다.</li>
   <li>탭 문자: 눈에 안 보이는 문자이다 보니 지출 내역 입력할 때 알아보기 힘들 뿐 아니라 입력 후 잘못 입력한 곳이 있는지 알아차리기 어려웠다.</li>
-  <li>콜론(<code class="highlighter-rouge">':'</code>) 문자: 유닉스의 일반 텍스트 포맷 데이터베이스에서 쓰는 문자여서 적용해봤지만, 각 셀이 서로 붙어있게 되어서 가독성이 떨어졌다.</li>
-  <li><code class="highlighter-rouge">' | '</code> 문자열: 입력이 조금 번거롭긴 하지만 입력된 항목 양옆이 빈칸으로 구분되어 입력된 내용을 구분해서 보기가 비교적 편했다.</li>
+  <li>콜론(<code class="language-plaintext highlighter-rouge">':'</code>) 문자: 유닉스의 일반 텍스트 포맷 데이터베이스에서 쓰는 문자여서 적용해봤지만, 각 셀이 서로 붙어있게 되어서 가독성이 떨어졌다.</li>
+  <li><code class="language-plaintext highlighter-rouge">' | '</code> 문자열: 입력이 조금 번거롭긴 하지만 입력된 항목 양옆이 빈칸으로 구분되어 입력된 내용을 구분해서 보기가 비교적 편했다.</li>
 </ul>
 
 <p>포맷 변경 후 이런 식으로 가계부를 입력한다.</p>
@@ -202,11 +202,11 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/usr/bin/env bash</span>
 
-<span class="nv">ledger</span><span class="o">=</span><span class="s2">"/Users/sehun/personal/ledger/</span><span class="k">$(</span>date -v -1d <span class="s2">"+%Y"</span><span class="k">)</span><span class="s2">.txt"</span>
-<span class="nv">result</span><span class="o">=</span><span class="k">$(</span>grep -e <span class="s2">"^</span><span class="k">$(</span>date -v -1d <span class="s2">"+%m.%d"</span><span class="k">)</span><span class="s2">"</span> <span class="k">${</span><span class="nv">ledger</span><span class="k">})</span>
-<span class="nv">yesterday</span><span class="o">=</span><span class="k">$(</span>date -v -1d <span class="s2">"+%m.%d"</span><span class="k">)</span>
+<span class="nv">ledger</span><span class="o">=</span><span class="s2">"/Users/sehun/personal/ledger/</span><span class="si">$(</span><span class="nb">date</span> <span class="nt">-v</span> <span class="nt">-1d</span> <span class="s2">"+%Y"</span><span class="si">)</span><span class="s2">.txt"</span>
+<span class="nv">result</span><span class="o">=</span><span class="si">$(</span><span class="nb">grep</span> <span class="nt">-e</span> <span class="s2">"^</span><span class="si">$(</span><span class="nb">date</span> <span class="nt">-v</span> <span class="nt">-1d</span> <span class="s2">"+%m.%d"</span><span class="si">)</span><span class="s2">"</span> <span class="k">${</span><span class="nv">ledger</span><span class="k">}</span><span class="si">)</span>
+<span class="nv">yesterday</span><span class="o">=</span><span class="si">$(</span><span class="nb">date</span> <span class="nt">-v</span> <span class="nt">-1d</span> <span class="s2">"+%m.%d"</span><span class="si">)</span>
 
-<span class="k">if</span> <span class="o">[</span> -z <span class="k">${</span><span class="nv">result</span><span class="k">}</span> <span class="o">]</span> ; <span class="k">then
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="k">${</span><span class="nv">result</span><span class="k">}</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then
 	</span><span class="nb">echo </span>display notification <span class="se">\"</span>어제 <span class="se">\(</span><span class="k">${</span><span class="nv">yesterday</span><span class="k">}</span><span class="se">\)</span> 지출 내역을<span class="se">\</span>
 	작성하지 않으셨네요. <span class="se">\"</span> with title <span class="se">\"</span>가계부<span class="se">\"</span>  | osascript
 <span class="k">fi</span></code></pre></figure>
@@ -240,19 +240,19 @@
 <ul>
   <li>지금 남아있는 돈은 얼마일까
     <ul>
-      <li><code class="highlighter-rouge">./ext_date_range.sh 01.01 03.19 | ./ext_pay.sh | ./comp_sum.sh</code></li>
+      <li><code class="language-plaintext highlighter-rouge">./ext_date_range.sh 01.01 03.19 | ./ext_pay.sh | ./comp_sum.sh</code></li>
     </ul>
   </li>
   <li>특정 계좌에 남은 총액은 얼마일까
     <ul>
-      <li><code class="highlighter-rouge">./ext_date_range.sh 01.01 03.19 | ./ext_pay.sh | grep kakao |\ 
+      <li><code class="language-plaintext highlighter-rouge">./ext_date_range.sh 01.01 03.19 | ./ext_pay.sh | grep kakao |\ 
 ./comp_sum.sh</code></li>
-      <li>기간 내 지출 내역을 계좌 이름으로 다시 필터링(<code class="highlighter-rouge">grep kakao</code>)해서 기간 내 해당 계좌의 지출액 합을 계산한다.</li>
+      <li>기간 내 지출 내역을 계좌 이름으로 다시 필터링(<code class="language-plaintext highlighter-rouge">grep kakao</code>)해서 기간 내 해당 계좌의 지출액 합을 계산한다.</li>
     </ul>
   </li>
   <li>travel 카테고리에 속하는 지출 내역에는 무엇이 있을까
     <ul>
-      <li><code class="highlighter-rouge">cat ~/personal/finance/2023.txt | grep travel</code></li>
+      <li><code class="language-plaintext highlighter-rouge">cat ~/personal/finance/2023.txt | grep travel</code></li>
       <li>가계부를 카테고리 이름으로 필터링한다. 만든 스크립트를 쓰지 않고 해결할 수 있는 문제다.</li>
     </ul>
   </li>

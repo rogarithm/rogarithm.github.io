@@ -27,7 +27,6 @@
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#마치며&quot; id=&quot;markdown-toc-마치며&quot;&gt;마치며&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#자동화를-통해-얻은-것&quot; id=&quot;markdown-toc-자동화를-통해-얻은-것&quot;&gt;자동화를 통해 얻은 것&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#구현한-코드를-확인하려면&quot; id=&quot;markdown-toc-구현한-코드를-확인하려면&quot;&gt;구현한 코드를 확인하려면?&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -223,57 +222,6 @@
   &lt;li&gt;스케일 아웃 등 프로젝트 인프라가 확장되더라도 배포 작업에 드는 시간이 늘어나지 않게 되었다.&lt;sup id=&quot;fnref:you-didnt-consider-scale-out&quot;&gt;&lt;a href=&quot;#fn:you-didnt-consider-scale-out&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;구현한-코드를-확인하려면&quot;&gt;구현한 코드를 확인하려면?&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;배포 자동화를 적용한 프로젝트는 여기서 확인할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;jekyll-linkpreview-wrapper&quot;&gt;
-  &lt;div class=&quot;jekyll-linkpreview-wrapper-inner&quot;&gt;
-    &lt;div class=&quot;jekyll-linkpreview-content&quot;&gt;
-      &lt;div class=&quot;jekyll-linkpreview-image&quot;&gt;
-        &lt;a href=&quot;https://github.com/rogarithm/sool-dam-a&quot; target=&quot;_blank&quot;&gt;
-          &lt;img src=&quot;https://opengraph.githubassets.com/0ea9091114c989ec11f0b7f0b22b7faf8b65b502b0a021eede5351c375d2625f/rogarithm/sool-dam-a&quot; /&gt;
-        &lt;/a&gt;
-      &lt;/div&gt;
-
-      &lt;div class=&quot;jekyll-linkpreview-body&quot;&gt;
-        &lt;h2 class=&quot;jekyll-linkpreview-title&quot;&gt;
-          &lt;a href=&quot;https://github.com/rogarithm/sool-dam-a&quot; target=&quot;_blank&quot;&gt;GitHub - rogarithm/sool-dam-a&lt;/a&gt;
-        &lt;/h2&gt;
-        &lt;div class=&quot;jekyll-linkpreview-description&quot;&gt;Contribute to rogarithm/sool-dam-a development by creating an account on GitHub.&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;jekyll-linkpreview-footer&quot;&gt;
-      &lt;a href=&quot;//github.com&quot; target=&quot;_blank&quot;&gt;github.com&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;깃헙액션 스크립트는 여기서 확인할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;jekyll-linkpreview-wrapper&quot;&gt;
-  &lt;div class=&quot;jekyll-linkpreview-wrapper-inner&quot;&gt;
-    &lt;div class=&quot;jekyll-linkpreview-content&quot;&gt;
-      &lt;div class=&quot;jekyll-linkpreview-image&quot;&gt;
-        &lt;a href=&quot;https://github.com/rogarithm/sool-dam-a&quot; target=&quot;_blank&quot;&gt;
-          &lt;img src=&quot;https://opengraph.githubassets.com/0ea9091114c989ec11f0b7f0b22b7faf8b65b502b0a021eede5351c375d2625f/rogarithm/sool-dam-a&quot; /&gt;
-        &lt;/a&gt;
-      &lt;/div&gt;
-
-      &lt;div class=&quot;jekyll-linkpreview-body&quot;&gt;
-        &lt;h2 class=&quot;jekyll-linkpreview-title&quot;&gt;
-          &lt;a href=&quot;https://github.com/rogarithm/sool-dam-a&quot; target=&quot;_blank&quot;&gt;sool-dam-a/deploy-on-merge.yml at main · rogarithm/sool-dam-a&lt;/a&gt;
-        &lt;/h2&gt;
-        &lt;div class=&quot;jekyll-linkpreview-description&quot;&gt;Contribute to rogarithm/sool-dam-a development by creating an account on GitHub.&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;jekyll-linkpreview-footer&quot;&gt;
-      &lt;a href=&quot;//github.com&quot; target=&quot;_blank&quot;&gt;github.com&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
 &lt;p&gt; &lt;/p&gt;
 
 &lt;hr /&gt;
@@ -381,13 +329,13 @@
   &lt;li&gt;지출한 금액은 +, 벌어들인 금액은 -로 입력&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;문제가 된 점은 같은 행의 항목을 어떤 문자로 구분할지였다. 최종적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;' | '&lt;/code&gt; 문자열로 결정했고, 결정하기까지의 과정에서 떠올린 선택지를 실제로 지출 내역 작성에 써보면서 어떤 게 더 편한지 비교했다.&lt;/p&gt;
+&lt;p&gt;문제가 된 점은 같은 행의 항목을 어떤 문자로 구분할지였다. 최종적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;' | '&lt;/code&gt; 문자열로 결정했고, 결정하기까지의 과정에서 떠올린 선택지를 실제로 지출 내역 작성에 써보면서 어떤 게 더 편한지 비교했다.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;쉼표(&lt;code class=&quot;highlighter-rouge&quot;&gt;,&lt;/code&gt;) 문자: 입력하기 편했다. 처음엔 가계부 분석할 때 데이터 정제를 간단히 할 수 있을 것 같다고 생각했다. 하지만 지출 내역 설명 항목이나 상세 설명 항목에 쉼표가 들어갈 때가 있어 생각했던 것만큼 간단하지 않을 것 같아 쓰지 않았다.&lt;/li&gt;
+  &lt;li&gt;쉼표(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;,&lt;/code&gt;) 문자: 입력하기 편했다. 처음엔 가계부 분석할 때 데이터 정제를 간단히 할 수 있을 것 같다고 생각했다. 하지만 지출 내역 설명 항목이나 상세 설명 항목에 쉼표가 들어갈 때가 있어 생각했던 것만큼 간단하지 않을 것 같아 쓰지 않았다.&lt;/li&gt;
   &lt;li&gt;탭 문자: 눈에 안 보이는 문자이다 보니 지출 내역 입력할 때 알아보기 힘들 뿐 아니라 입력 후 잘못 입력한 곳이 있는지 알아차리기 어려웠다.&lt;/li&gt;
-  &lt;li&gt;콜론(&lt;code class=&quot;highlighter-rouge&quot;&gt;':'&lt;/code&gt;) 문자: 유닉스의 일반 텍스트 포맷 데이터베이스에서 쓰는 문자여서 적용해봤지만, 각 셀이 서로 붙어있게 되어서 가독성이 떨어졌다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;' | '&lt;/code&gt; 문자열: 입력이 조금 번거롭긴 하지만 입력된 항목 양옆이 빈칸으로 구분되어 입력된 내용을 구분해서 보기가 비교적 편했다.&lt;/li&gt;
+  &lt;li&gt;콜론(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;':'&lt;/code&gt;) 문자: 유닉스의 일반 텍스트 포맷 데이터베이스에서 쓰는 문자여서 적용해봤지만, 각 셀이 서로 붙어있게 되어서 가독성이 떨어졌다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;' | '&lt;/code&gt; 문자열: 입력이 조금 번거롭긴 하지만 입력된 항목 양옆이 빈칸으로 구분되어 입력된 내용을 구분해서 보기가 비교적 편했다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;포맷 변경 후 이런 식으로 가계부를 입력한다.&lt;/p&gt;
@@ -443,11 +391,11 @@
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 
-&lt;span class=&quot;nv&quot;&gt;ledger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/Users/sehun/personal/ledger/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;date -v -1d &lt;span class=&quot;s2&quot;&gt;&quot;+%Y&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.txt&quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;grep -e &lt;span class=&quot;s2&quot;&gt;&quot;^&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;date -v -1d &lt;span class=&quot;s2&quot;&gt;&quot;+%m.%d&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ledger&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;date -v -1d &lt;span class=&quot;s2&quot;&gt;&quot;+%m.%d&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;ledger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/Users/sehun/personal/ledger/&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-1d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;+%Y&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.txt&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;^&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-1d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;+%m.%d&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ledger&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-1d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;+%m.%d&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -z &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; ; &lt;span class=&quot;k&quot;&gt;then
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-z&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
 	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;display notification &lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;어제 &lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;yesterday&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\)&lt;/span&gt; 지출 내역을&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 	작성하지 않으셨네요. &lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt; with title &lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;가계부&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;  | osascript
 &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -481,19 +429,19 @@
 &lt;ul&gt;
   &lt;li&gt;지금 남아있는 돈은 얼마일까
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./ext_date_range.sh 01.01 03.19 | ./ext_pay.sh | ./comp_sum.sh&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./ext_date_range.sh 01.01 03.19 | ./ext_pay.sh | ./comp_sum.sh&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;특정 계좌에 남은 총액은 얼마일까
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./ext_date_range.sh 01.01 03.19 | ./ext_pay.sh | grep kakao |\ 
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./ext_date_range.sh 01.01 03.19 | ./ext_pay.sh | grep kakao |\ 
 ./comp_sum.sh&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;기간 내 지출 내역을 계좌 이름으로 다시 필터링(&lt;code class=&quot;highlighter-rouge&quot;&gt;grep kakao&lt;/code&gt;)해서 기간 내 해당 계좌의 지출액 합을 계산한다.&lt;/li&gt;
+      &lt;li&gt;기간 내 지출 내역을 계좌 이름으로 다시 필터링(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grep kakao&lt;/code&gt;)해서 기간 내 해당 계좌의 지출액 합을 계산한다.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;travel 카테고리에 속하는 지출 내역에는 무엇이 있을까
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cat ~/personal/finance/2023.txt | grep travel&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat ~/personal/finance/2023.txt | grep travel&lt;/code&gt;&lt;/li&gt;
       &lt;li&gt;가계부를 카테고리 이름으로 필터링한다. 만든 스크립트를 쓰지 않고 해결할 수 있는 문제다.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
