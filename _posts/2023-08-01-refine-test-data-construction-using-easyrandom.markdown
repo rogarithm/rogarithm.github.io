@@ -237,12 +237,17 @@ public void addTodoFailWhenRequestNotSatisfyConstraint() {
 
 ### 결론
 
-EasyRandom을 테스트에 적용 후
+- 테스트 데이터 생성은 테스트 코드의 상당 부분을 차지하며, EasyRandom은 이를 개선할 수 있도록 도와준다.
+- 테스트에 따라 임의의 값으로 만들어도 괜찮은 경우가 있는가 하면, 특정 범위 내의 값으로 만들어야만 하는 경우도 있다. 두 경우 모두에 EasyRandom을 활용할 수 있다.
+- EasyRandom을 적용했을 때 어떤 부분은 코드가 줄어들기도 했지만, 또 어떤 곳은 코드가 늘어나기도 했다. 이전 방식에 비해 더 원활한 테스트 코드 관리를 위해 재사용성을 높일 수 있도록 다듬는 과정이 필요해 보인다.
 
-- 테스트 데이터에 어떤 값을 넣어야할지 고민을 덜 하게 되었다.
-- 테스트 데이터를 만드는 코드가 삭제되어서 테스트 읽는 게 수월해졌다.
-- 통합 테스트에서는 조건에 맞는 값을 반환하도록 EasyRandomParameter를 구현해야 해서 오히려 코드가 늘어났다. 다만 여러 군데서 쓰게 될 경우 더 효율적일 것 같다.
-- 어떤 부분은 코드가 늘어나기도 했고, 어떤 부분은 줄어들기도 했다. 적용 후 추가로 구현하는 기능에서도 지속적으로 적용해봤을 때 도입한 것이 괜찮은 선택이었는지 더 잘 알 수 있을 것 같다.
+&nbsp;
+
+### 참고 자료
+
+- [EasyRandom 공식 저장소](https://github.com/j-easy/easy-random)
+- [EasyRandom 적용에 대해 설명하는 블로그](https://velog.io/@bernard/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%B4...Object-Mother%EC%99%80-EasyRandom)
+- 내가 실제로 어떻게 적용했는지 궁금하다면 [이 PR](https://github.com/rogarithm/todos/pull/27)에서 확인할 수 있다.
 
 &nbsp;
 
